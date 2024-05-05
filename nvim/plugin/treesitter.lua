@@ -90,6 +90,7 @@ require('treesitter-context').setup {
   max_lines = 3,
 }
 
+---@diagnostic disable-next-line: missing-parameter
 require('ts_context_commentstring').setup()
 
 -- Tree-sitter based folding
