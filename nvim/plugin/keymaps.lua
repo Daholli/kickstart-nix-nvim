@@ -128,12 +128,12 @@ keymap.set('c', '%%', function()
   end
 end, { expr = true, desc = "expand to current buffer's directory" })
 
-keymap.set('n', '<space>tn', vim.cmd.tabnew, { desc = '[t]ab: [n]ew' })
-keymap.set('n', '<space>tq', vim.cmd.tabclose, { desc = '[t]ab: [q]uit/close' })
+keymap.set('n', '<leader>tn', vim.cmd.tabnew, { desc = '[t]ab: [n]ew' })
+keymap.set('n', '<leader>tq', vim.cmd.tabclose, { desc = '[t]ab: [q]uit/close' })
 
 local severity = diagnostic.severity
 
-keymap.set('n', '<space>e', function()
+keymap.set('n', '<leader>d', function()
   local _, winid = diagnostic.open_float(nil, { scope = 'line' })
   if not winid then
     vim.notify('no diagnostics found', vim.log.levels.INFO)
@@ -185,6 +185,28 @@ keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'move [d]own half-page and center' 
 keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'move [u]p half-page and center' })
 keymap.set('n', '<C-f>', '<C-f>zz', { desc = 'move DOWN [f]ull-page and center' })
 keymap.set('n', '<C-b>', '<C-b>zz', { desc = 'move UP full-page and center' })
+
+
+-- Daniel Keymaps
+
+-- Floaterm
+vim.g.floaterm_width = 0.95
+vim.g.floaterm_height = 0.95
+keymap.set('n', '<leader>gs', ':FloatermNew lazygit<CR>', { desc = 'Open Lazygit in a Floaterm.' })
+keymap.set('n', '<F8>', ':FloatermToggle<CR>', { desc = 'Toggle Floaterm window.' })
+
+-- remap cursor and page movement
+keymap.set('n', '<C-u>', '<C-u>zz', { noremap = true, desc = 'Move half page up and center cursor.' })
+keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true, desc = 'Move half page down and center cursor.' })
+
+-- quickfix list bindings
+keymap.set('n', '<A-o>', ':copen<CR>', { noremap = true, desc = 'Open quickfix list.' })
+keymap.set('n', '<A-c>', ':cclose<CR>', { noremap = true, desc = 'Close quickfix list.' })
+keymap.set('n', '<A-n>', ':cnext<CR>zz', { noremap = true, desc = 'Go to next item in quickfix list.' })
+keymap.set('n', '<A-p>', ':cprev<CR>zz', { noremap = true, desc = 'Go to previous item in quickfix list.' })
+
+-- greatest remap ever (primeagen)
+keymap.set({ 'n', 'v' }, '<leader>p', '"_dP', { noremap = true, desc = 'Paste without loosing the pasted-over value.' })
 
 --- Disabled keymaps [enable at your own risk]
 

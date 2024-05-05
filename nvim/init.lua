@@ -4,7 +4,7 @@ local opt = vim.o
 local g = vim.g
 
 -- <leader> key. Defaults to `\`. Some people prefer space.
--- g.mapleader = ' '
+g.mapleader = ' '
 -- g.maplocalleader = ' '
 
 opt.compatible = false
@@ -44,8 +44,12 @@ opt.cmdheight = 0
 
 opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
--- Configure Neovim diagnostic messages
+local ok, _ = pcall(vim.cmd, 'colorscheme tokyonight')
+if not ok then
+  cmd 'colorscheme default'
+end
 
+-- Configure Neovim diagnostic messages
 local function prefix_diagnostic(prefix, diagnostic)
   return string.format(prefix .. ' %s', diagnostic.message)
 end
