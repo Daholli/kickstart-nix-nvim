@@ -31,7 +31,7 @@ with final.pkgs.lib; let
     nvim-treesitter.withAllGrammars
     luasnip # snippets | https://github.com/l3mon4d3/luasnip/
     nvim-autopairs
-    
+
     # nvim-cmp (autocompletion) and extensions
     nvim-cmp # https://github.com/hrsh7th/nvim-cmp
     cmp_luasnip # snippets autocompletion extension for nvim-cmp | https://github.com/saadparwaiz1/cmp_luasnip/
@@ -47,16 +47,17 @@ with final.pkgs.lib; let
 
     # git integration plugins
     diffview-nvim # https://github.com/sindrets/diffview.nvim/
+    neogit # https://github.com/TimUntersberger/neogit/
     gitsigns-nvim # https://github.com/lewis6991/gitsigns.nvim/
     vim-fugitive # https://github.com/tpope/vim-fugitive/
     # ^ git integration plugins
-    
+
     # telescope and extensions
     telescope-nvim # https://github.com/nvim-telescope/telescope.nvim/
     telescope-fzy-native-nvim # https://github.com/nvim-telescope/telescope-fzy-native.nvim
     # telescope-smart-history-nvim # https://github.com/nvim-telescope/telescope-smart-history.nvim
     # ^ telescope and extensions
-    
+
     # UI
     lualine-nvim # Status line | https://github.com/nvim-lualine/lualine.nvim/
     nvim-navic # Add LSP location to lualine | https://github.com/SmiteshP/nvim-navic
@@ -65,7 +66,7 @@ with final.pkgs.lib; let
     tokyonight-nvim
     nui-nvim
     # ^ UI
-    
+
     # language support
     nvim-lint
     # ^ language support
@@ -77,10 +78,9 @@ with final.pkgs.lib; let
     nvim-treesitter-textobjects # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/
     nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
     # ^ navigation/editing enhancement plugins
-    
+
     # Useful utilities
     nvim-unception # Prevent nested neovim sessions | nvim-unception
-    indent-blankline-nvim-lua
     neo-tree-nvim
     # ^ Useful utilities
 
@@ -90,11 +90,6 @@ with final.pkgs.lib; let
     nvim-web-devicons
     vim-repeat
     # ^ libraries that other plugins depend on
-    
-    # Debug
-    nvim-dap
-    nvim-dap-ui
-    nvim-dap-go
 
     # bleeding-edge plugins from flake inputs
     # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
@@ -105,7 +100,7 @@ with final.pkgs.lib; let
   extraPackages = with pkgs; [
     # language servers, etc.
     lua-language-server
-    nil # nix LSP
+    nixd # nix LSP
   ];
 in {
   # This is the neovim derivation

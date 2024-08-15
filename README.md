@@ -24,8 +24,6 @@
       for <a href="https://neovim.io/">Neovim</a> 
     </strong>
   </p>
-</div>
-<!-- markdownlint-restore -->
 
 [![Neovim][neovim-shield]][neovim-url]
 [![Nix][nix-shield]][nix-url]
@@ -33,6 +31,8 @@
 
 [![GPL2 License][license-shield]][license-url]
 [![Issues][issues-shield]][issues-url]
+</div>
+<!-- markdownlint-restore -->
 
 ![](https://github.com/nix-community/kickstart-nix.nvim/assets/12857160/84faa268-82de-4401-acf3-efddc26dd58a)
 
@@ -101,7 +101,7 @@ to start a repo based on this template. **Do _not_ fork it**.
 1. Add/remove plugins to/from the [Neovim overlay](./nix/neovim-overlay.nix).
 1. Add/remove plugin configs to/from the `nvim/plugin` directory.
 1. Modify as you wish (you will probably want to add a color theme, ...).
-   See: [Design](#design).
+   See: [Design](#robot-design).
 1. You can create more than one package using the `mkNeovim` function by
     - Passing different plugin lists.
     - Adding `ignoreConfigRegexes` (e.g. `= [ "^ftplugin/.*.lua" ]`).
@@ -304,9 +304,9 @@ To work around this, you can put scripts in the `plugin` or `after/plugin` direc
 - [`nixCats-nvim`](https://github.com/BirdeeHub/nixCats-nvim):
   A project that organises plugins into categories.
   It also separates lua and nix configuration.
-- [`lazy-nix-helper.nvim`](https://github.com/b-src/lazy-nix-helper.nvim):
-  For lazy.nvim users who would like to manage plugins with Nix,
-  but load them with lazy.nvim.
+- [`lz.n`](https://github.com/nvim-neorocks/lz.n):
+  A plugin-manager agnostic Lua library for lazy-loading plugins.
+  Can be used with Nix.
 
 > [!NOTE]
 >
