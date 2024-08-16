@@ -69,6 +69,7 @@ with final.pkgs.lib; let
 
     # language support
     nvim-lint
+    rustaceanvim
     # ^ language support
 
     # navigation/editing enhancement plugins
